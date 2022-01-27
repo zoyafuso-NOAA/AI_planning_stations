@@ -1,6 +1,6 @@
 add_graticule_labels <- function(side = c("bottom", "top", "left", "right"), 
                                  lon_labs_ = lon_labs, 
-                                 lat_labs_ = lat_labs) {
+                                 lat_labs_ = lat_labs, ...) {
   
   if ("bottom" %in% side) {
     bottom_line <- raster::extent(par()$usr[c(1, 2, 3, 3)] )
@@ -13,7 +13,7 @@ add_graticule_labels <- function(side = c("bottom", "top", "left", "right"),
     text(axis_locs@coords, 
          labels =  bquote(expr = .(paste0(lon_labs_[axis_labs], 
                                           intToUtf8(176), "E") )),
-         xpd = NA, pos = 1)
+         xpd = NA, pos = 1, ...)
   }
   
   if ("top" %in%  side) {
@@ -27,7 +27,7 @@ add_graticule_labels <- function(side = c("bottom", "top", "left", "right"),
     text(axis_locs@coords, 
          labels =  bquote(expr = .(paste0(lon_labs_[axis_labs], 
                                           intToUtf8(176), "E") )),
-         xpd = NA, pos = 1)
+         xpd = NA, pos = 3, ...)
   }
   
   if ("left" %in% side) {
@@ -40,7 +40,7 @@ add_graticule_labels <- function(side = c("bottom", "top", "left", "right"),
     
     text(axis_locs@coords, 
          labels =  bquote(expr = .(paste0(lat_labs_[axis_labs], intToUtf8(176), "N") )),
-         xpd = NA, pos = 2)
+         xpd = NA, pos = 2, ...)
   }
   
   if ("right" %in% side) {
@@ -54,7 +54,7 @@ add_graticule_labels <- function(side = c("bottom", "top", "left", "right"),
     text(axis_locs@coords, 
          labels =  bquote(expr = .(paste0(lat_labs_[axis_labs], 
                                           intToUtf8(176), "N") )),
-         xpd = NA, pos = 2)
+         xpd = NA, pos = 4, ...)
   }
 }
 
