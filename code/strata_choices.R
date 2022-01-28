@@ -26,18 +26,19 @@ source("modified_functions/add_graticule_labels.R")
 ###############################################################################
 ##   Import 420 station allocation
 ###############################################################################  
-AI_stations <- read.csv(file = "data/AIallocation420.csv")
+AI_stations <- 
+  read.csv(file = "data/AI_allocation_preprocessed/AIallocation420.csv")
 resample <- function(x, ...) x[sample.int(length(x), ...)]
 
 ###############################################################################
 ##   Import AI strata and land shapefiles
 ##   Subset AI_strata_poly to just those strata included in AI_stations
 ############################################################################### 
-AI_strata_poly <- rgdal::readOGR(dsn = "G:\\AI-GOA\\shapefiles\\ai_strata.shp")
+AI_strata_poly <- rgdal::readOGR(dsn = "data/GDrive_shapefiles/ai_strata.shp")
 strata_ids <- sort(unique(x = AI_stations$STRATUM))
 AI_strata_poly <- subset(x = AI_strata_poly, subset = STRATUM %in% strata_ids)
 
-AK_land <- rgdal::readOGR(dsn = "G:\\AI-GOA\\shapefiles\\alaska_dcw.shp")
+AK_land <- rgdal::readOGR(dsn = "data/GDrive_shapefiles/alaska_dcw.shp")
 
 ###############################################################################
 ####   Change vessel ids for 2022
@@ -50,7 +51,7 @@ AI_stations$VESSEL <- ifelse(test = AI_stations$VESSEL == 143,
 ###############################################################################
 ##   Import boundaries of the INPFC mangagement areas
 ###############################################################################  
-AI_regions <- rgdal::readOGR(dsn = "G:\\AI-GOA\\shapefiles\\AI_Regions_Poly.shp")
+AI_regions <- rgdal::readOGR(dsn = "data/GDrive_shapefiles/AI_Regions_Poly.shp")
 AI_regions <- sp::spTransform(x = AI_regions, AK_land@proj4string)
 AI_regions@data$Region2 <- c("Western", "Western",
                              "Central", "Central", "Central", "Central",
