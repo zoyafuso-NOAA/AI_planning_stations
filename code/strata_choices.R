@@ -27,7 +27,7 @@ source("modified_functions/add_graticule_labels.R")
 ##   Import 420 station allocation
 ###############################################################################  
 AI_stations <- 
-  read.csv(file = "data/AI_allocation_preprocessed/AIallocation420.csv")
+  read.csv(file = "data/AI_allocation_preprocessed/stations_420/AIallocation420.csv")
 resample <- function(x, ...) x[sample.int(length(x), ...)]
 
 ###############################################################################
