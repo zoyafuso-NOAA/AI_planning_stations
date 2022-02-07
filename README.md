@@ -16,5 +16,10 @@ To fulfill the priority of integrating new previously explored stations into the
 a) two randomly chosen stations for each selected large stratum: one station for vessel V1 and one station for vessel V2 for a total of 8 removed stations
 b) one randomly chosen station for each selected thin stratum for a total of two removed stations for vessel V1 and two removed stations for vessel V2. Note, this results in 12 potential new stations. 
 
-## code/trawlable_grids.R
+## [code/trawlable_grids.R](https://github.com/zoyafuso-NOAA/AI_planning_stations/blob/main/code/trawlable_grids.R)
+
+Append the trawlability information from the AI.AIGRID_GIS table in Oracle to the ai grid shapefile contained in the G: drive (G:\AI-GOA\shapefiles\aigrid_clipped.shp) and write a new [shapefile](C:\Users\zack.oyafuso\Work\GitHub\AI_planning_stations\output_products\AI_grid_trawlability) to the [output_products/](https://github.com/zoyafuso-NOAA/AI_planning_stations/tree/main/output_products) directory. 
+
+## [code/drop_stations.R](https://github.com/zoyafuso-NOAA/AI_planning_stations/blob/main/code/drop_stations.R)
+
 
