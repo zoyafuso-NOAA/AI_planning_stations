@@ -1,4 +1,4 @@
-# Station allocations tasks for the Aleutian Island (AI) Bottom Trawl Survey:
+# Station allocations tasks for the 2022 Aleutian Island (AI) Bottom Trawl Survey:
 
 Scripts in the [code](https://github.com/zoyafuso-NOAA/AI_planning_stations/tree/main/code) directory complete these tasks:
 
